@@ -7,10 +7,11 @@ public class SnakeController : MonoBehaviour
     public float speed = 15f;
     bool isDead = false;
     Vector2 dir = new Vector2();
-    float moveX, moveY;
+    float moveX = 1.0f, moveY = 0.0f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+  
     }
 
     // Update is called once per frame
@@ -45,5 +46,22 @@ public class SnakeController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(dir);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("border"))
+        {
+            playerDeath();
+        }
+        
+            
+    }
+
+    void playerDeath()
+    {
+        Debug.Log("supposed to kill player");
+        GameManager.Instance.showRetry();
+        Destroy(this.gameObject);
     }
 }
