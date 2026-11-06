@@ -15,7 +15,7 @@ public class Fruit : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("call on earning points with game manager");
         GameManager.Instance.earnScore(score);

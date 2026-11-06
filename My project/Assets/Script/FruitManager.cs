@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class FruitManager : MonoBehaviour
+public class FruitManager : Singleton<FruitManager>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void spawnFruit()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
