@@ -13,6 +13,8 @@ The Spawner class is the template class that derrives the FruitSpawner and Playe
 The SnakeController and Fruit scripts are by themselves.
 ## UML Diagram
 <!-- Attach your UML diagram here -->
+<img width="962" height="606" alt="image" src="https://github.com/user-attachments/assets/d621e26c-9d90-4ac1-8fd6-ef0d9a79e470" />
+
 ---
 # Singleton Pattern
 ---
