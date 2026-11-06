@@ -333,7 +333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13342b98b7ea884689f15a32c66feec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FruitSpawner
-  fruitGameObj: {fileID: 7643714644023340853, guid: f4c2ea6281299df42bb5d306fd3b80e8, type: 3}
+  Cherry: {fileID: 7643714644023340853, guid: f4c2ea6281299df42bb5d306fd3b80e8, type: 3}
+  Star: {fileID: 551936639224043344, guid: b6e9165f2022e2a4291fff773dde7c2d, type: 3}
+  Diamond: {fileID: 8393659575051119899, guid: 995092b0e707fcc48ba24e7658930a42, type: 3}
 --- !u!4 &173468388
 Transform:
   m_ObjectHideFlags: 0
