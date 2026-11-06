@@ -4,6 +4,7 @@ using TMPro;
 public class GameManager : Singleton<GameManager>
 {
     public TextMeshProUGUI score, gameOver;
+    public PlayerSpawner pSpawner;
     float scoreEarned = 0;
     bool canRetry = false;
 
@@ -12,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     {
         score.text = "Score: 0";
         gameOver.text = "";
+        FruitManager.Instance.spawnFruit();
     }
 
     // Update is called once per frame
@@ -23,6 +25,8 @@ public class GameManager : Singleton<GameManager>
             scoreEarned = 0;
             score.text = "Score: 0";
             gameOver.text = "";
+            FruitManager.Instance.spawnFruit();
+            pSpawner.spawnEntity();
             canRetry = false;
         }
     }
@@ -31,6 +35,7 @@ public class GameManager : Singleton<GameManager>
     {
         scoreEarned += s;
         score.text = "Score: " + scoreEarned;
+        FruitManager.Instance.spawnFruit();
     }
 
     public void showRetry()
