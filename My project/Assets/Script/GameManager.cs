@@ -27,10 +27,13 @@ public class GameManager : Singleton<GameManager>
             scoreEarned = 0;
             score.text = "Score: 0";
             gameOver.text = "";
+
+          
             FruitManager.Instance.spawnFruit();
             pSpawner.spawnEntity();
             gameOver.text = "";
             canRetry = false;
+            
         }
     }
 
