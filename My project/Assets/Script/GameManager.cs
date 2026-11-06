@@ -3,9 +3,10 @@ using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
-    public TextMeshProUGUI score, gameOver;
+    public TextMeshProUGUI score, gameOver, highScore;
     public PlayerSpawner pSpawner;
     float scoreEarned = 0;
+    float highScoreEarned = 0;
     bool canRetry = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -13,6 +14,7 @@ public class GameManager : Singleton<GameManager>
     {
         score.text = "Score: 0";
         gameOver.text = "";
+        highScore.text = "High Score: 0";
         FruitManager.Instance.spawnFruit();
     }
 
@@ -27,6 +29,7 @@ public class GameManager : Singleton<GameManager>
             gameOver.text = "";
             FruitManager.Instance.spawnFruit();
             pSpawner.spawnEntity();
+            gameOver.text = "";
             canRetry = false;
         }
     }
@@ -34,12 +37,15 @@ public class GameManager : Singleton<GameManager>
     public void earnScore(float s)
     {
         scoreEarned += s;
+        highScoreEarned += s;
         score.text = "Score: " + scoreEarned;
+        highScore.text = "High Score: " + highScoreEarned;
         FruitManager.Instance.spawnFruit();
     }
 
     public void showRetry()
     {
         canRetry = true;
+        gameOver.text = "Game Over, R to Restart";
     }
 }
